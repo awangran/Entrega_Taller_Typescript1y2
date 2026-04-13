@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TV Series</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+  <style>
+    .navbar-tvseries {
+      background-color: #29b6c8;
+      padding: 0.6rem 1.2rem;
+    }
+    .navbar-tvseries .navbar-brand {
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .tv-icon {
+      background: #1a2b3c;
+      color: #fff;
+      font-size: 0.6rem;
+      font-weight: 700;
+      padding: 3px 5px;
+      border-radius: 3px;
+      line-height: 1.2;
+      text-align: center;
+    }
+    body { background: #fff; }
+    .container-main { padding: 2rem 2.5rem; }
+    table { border-collapse: collapse; width: 100%; }
+    thead th {
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-bottom: 2px solid #dee2e6;
+      padding: 0.6rem 0.8rem;
+      color: #212529;
+    }
+    tbody tr {
+      border-bottom: 1px solid #e9ecef;
+      cursor: pointer;
+    }
+    tbody tr:hover { background-color: #f8f9fa; }
+    tbody tr.selected { background-color: #e8f4f8; }
+    tbody td {
+      padding: 0.65rem 0.8rem;
+      font-size: 0.9rem;
+      color: #212529;
+    }
+    tbody td.td-name { color: #2196f3; }
+    tfoot td {
+      padding: 0.5rem 0.8rem;
+      font-size: 0.85rem;
+      color: #555;
+      border-top: 1px solid #dee2e6;
+    }
+    #detalle .card {
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+    }
+    #detalle .card-img-top {
+      border-radius: 4px 4px 0 0;
+      max-height: 230px;
+      object-fit: cover;
+      width: 100%;
+    }
+    #detalle .card-body { padding: 1rem; }
+    #detalle .card-title {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: #212529;
+    }
+    #detalle .card-text {
+      font-size: 0.85rem;
+      color: #555;
+      margin-bottom: 0.75rem;
+    }
+    #detalle .card-link {
+      font-size: 0.82rem;
+      color: #2196f3;
+      word-break: break-all;
+    }
+    #detalle-placeholder {
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-tvseries">
+    <a class="navbar-brand" href="#">
+      <span class="tv-icon">TV<br>SER</span>
+      TV Series
+    </a>
+  </nav>
+
+  <div class="container-main">
+    <div class="row">
+      <div class="col-md-7">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Channel</th>
+              <th>Seasons</th>
+            </tr>
+          </thead>
+          <tbody id="tablaSeries"></tbody>
+          <tfoot id="tablaFoot"></tfoot>
+        </table>
+      </div>
+      <div class="col-md-5" id="detalle">
+        <div id="detalle-placeholder">
+          Selecciona una serie para ver el detalle
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
